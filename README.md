@@ -18,6 +18,14 @@ Here is how long each solution runs. All solutions are measured (non
 scientifically) in [`bench.rs`](./runner/src/bin/bench.rs) on an
 `AMD Ryzen 9 5900X (24) @ 3.7GHz` machine running Linux.
 
+|                                                | part A                              | part B                              |
+|:-----------------------------------------------|:------------------------------------|:------------------------------------|
+| [day 1](https://adventofcode.com/2022/day/1)   | [` 0.027 ms`](./day01a/src/main.rs) | [` 0.031 ms`](./day01b/src/main.rs) |
+
+|              | one-by-one (1 CPU core)                  | parallel                                     |
+|:-------------|:-----------------------------------------|:---------------------------------------------|
+| _everything_ | [`0.058 ms`](./runner/src/bin/runner.rs) | [`0.058 ms`](./runner/src/bin/runner-par.rs) |
+
 ## Run solutions
 
 Each Rust project contains a `input.txt` file, holding the puzzle input. Simply
