@@ -7,10 +7,10 @@ pub fn main() {
             .map(|(a, b)| b
                 .iter()
                 .filter(|b| a.contains(b))
-                .map(|b| match b {
-                    b'a'..=b'z' => (b - b'a') as i16 + 1,
-                    b'A'..=b'Z' => (b - b'A') as i16 + 27,
-                    _ => unreachable!(),
+                .map(|b| if *b >= b'a' {
+                    (b - b'a') as i16 + 1
+                } else {
+                    (b - b'A') as i16 + 27
                 })
                 .next()
                 .unwrap())

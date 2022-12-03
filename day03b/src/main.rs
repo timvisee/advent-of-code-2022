@@ -9,10 +9,10 @@ pub fn main() {
                 .iter()
                 .find(|b| set[1].contains(b) && set[2].contains(b))
                 .unwrap())
-            .map(|b| match b {
-                b'a'..=b'z' => (b - b'a') as i16 + 1,
-                b'A'..=b'Z' => (b - b'A') as i16 + 27,
-                _ => unreachable!(),
+            .map(|b| if *b >= b'a' {
+                (b - b'a') as i16 + 1
+            } else {
+                (b - b'A') as i16 + 27
             })
             .sum::<i16>(),
     );
