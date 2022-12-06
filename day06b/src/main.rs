@@ -1,10 +1,18 @@
 pub fn main() {
-    println!(
-        "{}",
-        include_bytes!("../input.txt")
-            .windows(14)
-            .position(|b| !(0..13).any(|i| (i + 1..14).any(|j| b[i] == b[j])))
-            .unwrap()
-            + 14,
-    );
+    let d = include_bytes!("../input.txt");
+
+    let mut w = 0;
+    'main: loop {
+        for i in (0..13).rev() {
+            for j in (i + 1..14).rev() {
+                if d[w + i] == d[w + j] {
+                    w += i + 1;
+                    continue 'main;
+                }
+            }
+        }
+        break;
+    }
+
+    println!("{}", w + 14);
 }
