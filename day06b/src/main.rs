@@ -3,14 +3,14 @@ pub fn main() {
 
     let mut w = 0;
     'main: loop {
-        let mut seen = [false; 26];
+        let mut seen = 0u32;
         for i in (1..14).rev() {
-            let b = &mut seen[(d[w + i] - b'a') as usize];
-            if *b {
+            let mask = 1 << d[w + i] - b'a';
+            if seen & mask == mask {
                 w += i + 1;
                 continue 'main;
             }
-            *b = true;
+            seen |= mask;
         }
         break;
     }
