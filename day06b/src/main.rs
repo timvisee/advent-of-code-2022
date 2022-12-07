@@ -4,10 +4,10 @@ pub fn main() {
     let mut w = 0;
     'main: loop {
         let mut seen = 0u32;
-        for i in (1..=14).rev() {
+        for i in (0..=13).rev() {
             let mask = 1 << d[w + i] - b'a';
             if seen & mask == mask {
-                w += i;
+                w += i + 1;
                 continue 'main;
             }
             seen |= mask;
@@ -15,5 +15,5 @@ pub fn main() {
         break;
     }
 
-    println!("{}", w + 15);
+    println!("{}", w + 14);
 }
