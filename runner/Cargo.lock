@@ -125,10 +125,16 @@ version = "0.1.0"
 [[package]]
 name = "day07a"
 version = "0.1.0"
+dependencies = [
+ "atoi",
+]
 
 [[package]]
 name = "day07b"
 version = "0.1.0"
+dependencies = [
+ "atoi",
+]
 
 [[package]]
 name = "either"
