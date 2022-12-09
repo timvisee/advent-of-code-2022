@@ -2,7 +2,7 @@ pub fn main() {
     let d = include_bytes!("../input.txt");
     let s = d.iter().position(|b| b == &b'\n').unwrap();
     let g: Vec<&[u8]> = d.split(|b| b == &b'\n').filter(|l| !l.is_empty()).collect();
-    let mut seen = std::collections::HashSet::new();
+    let mut seen = rustc_hash::FxHashSet::default();
 
     for i in 1..s - 1 {
         seen.extend(
