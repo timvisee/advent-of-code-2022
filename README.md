@@ -32,7 +32,7 @@ scientifically) in [`bench.rs`](./runner/src/bin/bench.rs) on an
 
 |              | one-by-one (1 CPU core)                  | parallel                                     |
 |:-------------|:-----------------------------------------|:---------------------------------------------|
-| _everything_ | [`0.482 ms`](./runner/src/bin/runner.rs) | [`0.283 ms`](./runner/src/bin/runner-par.rs) |
+| _everything_ | [`0.892 ms`](./runner/src/bin/runner.rs) | [`0.421 ms`](./runner/src/bin/runner-par.rs) |
 
 ## Run solutions
 
