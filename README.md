@@ -29,11 +29,12 @@ scientifically) in [`bench.rs`](./runner/src/bin/bench.rs) on an
 | [day 7](https://adventofcode.com/2022/day/7)   | [` 0.008 ms`](./day07a/src/main.rs) | [` 0.011 ms`](./day07b/src/main.rs) |
 | [day 8](https://adventofcode.com/2022/day/8)   | [` 0.045 ms`](./day08a/src/main.rs) | [` 0.177 ms`](./day08b/src/main.rs) |
 | [day 9](https://adventofcode.com/2022/day/9)   | [` 0.120 ms`](./day09a/src/main.rs) | [` 0.290 ms`](./day09b/src/main.rs) |
-| [day 10](https://adventofcode.com/2022/day/9)  | [` 0.001 ms`](./day10a/src/main.rs) | [` 0.003 ms`](./day10b/src/main.rs) |
+| [day 10](https://adventofcode.com/2022/day/10)  | [` 0.001 ms`](./day10a/src/main.rs) | [` 0.003 ms`](./day10b/src/main.rs) |
+| [day 11](https://adventofcode.com/2022/day/11)  | [` 0.019 ms`](./day11a/src/main.rs) | [` 5.72  ms`](./day11b/src/main.rs) |
 
 |              | one-by-one (1 CPU core)                  | parallel                                     |
 |:-------------|:-----------------------------------------|:---------------------------------------------|
-| _everything_ | [`0.898 ms`](./runner/src/bin/runner.rs) | [`0.421 ms`](./runner/src/bin/runner-par.rs) |
+| _everything_ | [`6.637 ms`](./runner/src/bin/runner.rs) | [`5.314 ms`](./runner/src/bin/runner-par.rs) |
 
 ## Run solutions
 
