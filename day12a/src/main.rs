@@ -1,5 +1,3 @@
-use pathfinding::directed::dijkstra::dijkstra;
-
 const NEXT: [(usize, usize); 4] = [(1, 0), (usize::MAX, 0), (0, 1), (0, usize::MAX)];
 
 pub fn main() {
@@ -18,19 +16,19 @@ pub fn main() {
 
     println!(
         "{}",
-        dijkstra(
-            &(start % w, start / w),
+        pathfinding::directed::bfs::bfs(
+            &(end % w, end / w),
             |(x, y)| {
                 let cur = map[y * w + x];
                 NEXT.iter()
                     .map(|(xx, yy)| (x.wrapping_add(*xx), y.wrapping_add(*yy)))
-                    .filter(|(x, y)| x < &w && y < &h && map[y * w + x] <= cur + 1)
-                    .map(|pos| (pos, 1))
+                    .filter(|(x, y)| x < &w && y < &h && map[y * w + x] >= cur.saturating_sub(1))
                     .collect::<Vec<_>>()
             },
-            |&p| p == (end % w, end / w),
+            |&p| p == (start % w, start / w),
         )
         .unwrap()
-        .1
+        .len()
+            - 1
     );
 }
