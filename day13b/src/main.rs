@@ -4,18 +4,16 @@ use std::cmp::Ordering;
 pub fn main() {
     let first = Item::L(vec![Item::L(vec![Item::I(2)])]);
     let second = Item::L(vec![Item::L(vec![Item::I(6)])]);
-    let mut packets: Vec<Item> = include_str!("../input.txt")
+    let packets: Vec<Item> = include_str!("../input.txt")
         .lines()
         .filter(|l| !l.is_empty())
         .map(|l| item(l.as_bytes()).unwrap().1)
         .filter(|i| i < &second)
         .collect();
-    packets.extend([first.clone(), second.clone()]);
-    packets.sort_unstable();
+
     println!(
         "{}",
-        (packets.iter().position(|i| i == &first).unwrap() + 1)
-            * (packets.iter().position(|i| i == &second).unwrap() + 1)
+        (packets.iter().filter(|i| *i < &first).count() + 1) * (packets.len() + 2)
     );
 }
 
