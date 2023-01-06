@@ -25,7 +25,7 @@ scientifically) in [`bench.rs`](./runner/src/bin/bench.rs) on an
 | [day 3](https://adventofcode.com/2022/day/3)   | [` 0.015 ms`](./day03a/src/main.rs) | [` 0.016 ms`](./day03b/src/main.rs) |
 | [day 4](https://adventofcode.com/2022/day/4)   | [` 0.040 ms`](./day04a/src/main.rs) | [` 0.039 ms`](./day04b/src/main.rs) |
 | [day 5](https://adventofcode.com/2022/day/5)   | [` 0.020 ms`](./day05a/src/main.rs) | [` 0.019 ms`](./day05b/src/main.rs) |
-| [day 6](https://adventofcode.com/2022/day/6)   | [` 0.001 ms`](./day06a/src/main.rs) | [`   720 ns`](./day06b/src/main.rs) |
+| [day 6](https://adventofcode.com/2022/day/6)   | [` 0.001 ms`](./day06a/src/main.rs) | [`   550 ns`](./day06b/src/main.rs) |
 | [day 7](https://adventofcode.com/2022/day/7)   | [` 0.008 ms`](./day07a/src/main.rs) | [` 0.011 ms`](./day07b/src/main.rs) |
 | [day 8](https://adventofcode.com/2022/day/8)   | [` 0.045 ms`](./day08a/src/main.rs) | [` 0.177 ms`](./day08b/src/main.rs) |
 | [day 9](https://adventofcode.com/2022/day/9)   | [` 0.120 ms`](./day09a/src/main.rs) | [` 0.290 ms`](./day09b/src/main.rs) |

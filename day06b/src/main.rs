@@ -1,19 +1,18 @@
 pub fn main() {
-    let d = include_bytes!("../input.txt");
-
-    let mut w = 0;
-    'main: loop {
+    let mut i = 0;
+    while let Some(win) = include_bytes!("../input.txt").get(i..i + 14) {
         let mut seen = 0u32;
-        for i in (0..=13).rev() {
-            let mask = 1 << d[w + i] - b'a';
-            if seen & mask == mask {
-                w += i + 1;
-                continue 'main;
-            }
-            seen |= mask;
+        if let Some(pos) = win.iter().rposition(|b| {
+            let bit = 1 << (b % 32);
+            let duplicate = seen & bit != 0;
+            seen |= bit;
+            duplicate
+        }) {
+            i += pos + 1;
+        } else {
+            break;
         }
-        break;
     }
 
-    println!("{}", w + 14);
+    println!("{}", i);
 }
