@@ -19,10 +19,10 @@ pub fn main() {
         );
         seen.extend(
             (1..s - 1)
-                .scan(g[s - 1][i], |max, y| match (*max, g[s - y][i]) {
+                .scan(g[s - 1][i], |max, y| match (*max, g[s - y - 1][i]) {
                     (m, n) if n > m => {
                         *max = n;
-                        Some(Some(i + (s - y) * s))
+                        Some(Some(i + (s - y - 1) * s))
                     }
                     (m, _) if m >= b'9' => None,
                     _ => Some(None),
